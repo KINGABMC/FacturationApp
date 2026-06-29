@@ -5,6 +5,8 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "transactions")
 @Data
@@ -24,5 +26,6 @@ public class Transaction {
     
     @ManyToOne
     @JoinColumn(name = "wallet_id")
+    @JsonIgnore
     private Wallet wallet;
 }
